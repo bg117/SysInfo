@@ -84,4 +84,6 @@ Made by Kian Gabriel Arambulo
 
 <sup>Last updated: December 19, 2020</sup>
 
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=kiangabrielarambulo%40gmail.com&currency_code=PHP)
+
 [![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
