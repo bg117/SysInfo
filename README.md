@@ -4,7 +4,7 @@ Displays information about your system.
 Compile using Microsoft Visual Studio 2019. Older versions not guaranteed to work. Needs .NET Framework 4.5 to work.
 
 ## Compile without contributing
-Download the source files. To compile, choose `Release | AnyCPU`, go to the Build tab, press Build Solution, and you're done. Go to SysInfo\bin\Release to see the actual program.
+Download the source files. (DON'T DOWNLOAD THE SOURCE FILES FROM THE RELEASES SECTION!) To compile, choose `Release | AnyCPU`, go to the Build tab, press Build Solution, and you're done. Go to SysInfo\bin\Release to see the actual program.
 
 ## Contribute to project
 Download and install git [here](https://git-scm.com/downloads).
@@ -19,13 +19,13 @@ Now clone the forked repository to your machine. Go to your GitHub account, open
 
 Open up git Bash and type in the following:
 
-`git clone url you copied`  where "url you copied" is the the URL of your forked GitHub repo.
+`git clone url you copied`  where "url you copied" is the URL of your forked GitHub repo.
 
 For example:
 
-git clone https://github.com/this-is-you/first-contributions.git "destination path"
+`git clone https://github.com/username/SysInfo.git "destination path"`
 
-where this-is-you is your GitHub username and "destination path" is the path where you want the cloned repo to be placed on your computer. Here you're copying the contents of the first-contributions repository on GitHub to your computer.
+where `username` is your GitHub username and "destination path" is the path where you want the cloned repo to be placed on your computer. Here you're copying the contents of the first-contributions repository on GitHub to your computer.
 
 ### Create a branch
 
@@ -74,6 +74,7 @@ Soon, if the changes passed, I'll be merging all your changes into the master br
 #### Language: VB.NET
 
 ## Description
+
 This is a simple application that displays information (Windows version, build, CPU, etc.) about your system.
 Works on Vista, 7, 8, 8.1, and Windows 10. Doesn't work on XP as it doesn't support .NET Framework 4.5.
 
