@@ -83,3 +83,5 @@ Copyright © OpenCode 2020
 Made by Kian Gabriel Arambulo
 
 <sup>Last updated: December 19, 2020</sup>
+
+[![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
