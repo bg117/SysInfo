@@ -15,7 +15,7 @@ Click the `Fork` button in the top-right corner of the screen. This will create 
 ### Clone the repo
 Click the `Clone` button in the top-right corner of the screen.
 
-Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the `Code` button and then click the ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Copy to Clipboard") icon.
+Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the `Code` button and then click the ![alt text](https://i.ibb.co/NTwxwVp/githubcopy.png "Copy to Clipboard") icon.
 
 Open up git Bash and type in the following:
 
