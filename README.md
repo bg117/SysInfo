@@ -23,7 +23,7 @@ Open up git Bash and type in the following:
 
 For example:
 
-git clone https://github.com/this-is-you/first-contributions.git "destination path"
+`git clone https://github.com/username/SysInfo.git "destination path"`
 
 where this-is-you is your GitHub username and "destination path" is the path where you want the cloned repo to be placed on your computer. Here you're copying the contents of the first-contributions repository on GitHub to your computer.
 
