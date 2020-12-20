@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class loading
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,15 +20,15 @@ Partial Class loading
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ProgBar = New System.Windows.Forms.ProgressBar()
+        Me.Copyright = New System.Windows.Forms.Label()
+        Me.logo = New System.Windows.Forms.PictureBox()
+        CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -45,32 +45,32 @@ Partial Class loading
         '
         Me.Timer1.Enabled = True
         '
-        'ProgressBar1
+        'ProgBar
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(13, 55)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(473, 23)
-        Me.ProgressBar1.TabIndex = 1
+        Me.ProgBar.Location = New System.Drawing.Point(13, 55)
+        Me.ProgBar.Name = "ProgBar"
+        Me.ProgBar.Size = New System.Drawing.Size(473, 23)
+        Me.ProgBar.TabIndex = 1
         '
-        'Label2
+        'Copyright
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(158, 85)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(183, 15)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Copyright © OpenCode Inc. 2020"
+        Me.Copyright.AutoSize = True
+        Me.Copyright.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Copyright.Location = New System.Drawing.Point(158, 85)
+        Me.Copyright.Name = "Copyright"
+        Me.Copyright.Size = New System.Drawing.Size(183, 15)
+        Me.Copyright.TabIndex = 3
+        Me.Copyright.Text = "Copyright © OpenCode Inc. 2020"
         '
-        'PictureBox1
+        'logo
         '
-        Me.PictureBox1.Image = Global.SysInfo.My.Resources.Resources.pclogo
-        Me.PictureBox1.Location = New System.Drawing.Point(186, 8)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
+        Me.logo.Image = Global.SysInfo.My.Resources.Resources.pclogo
+        Me.logo.Location = New System.Drawing.Point(186, 8)
+        Me.logo.Name = "logo"
+        Me.logo.Size = New System.Drawing.Size(32, 32)
+        Me.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.logo.TabIndex = 4
+        Me.logo.TabStop = False
         '
         'loading
         '
@@ -78,9 +78,9 @@ Partial Class loading
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(498, 106)
         Me.ControlBox = False
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.logo)
+        Me.Controls.Add(Me.Copyright)
+        Me.Controls.Add(Me.ProgBar)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "loading"
@@ -88,7 +88,7 @@ Partial Class loading
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopMost = True
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -96,7 +96,7 @@ Partial Class loading
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
-    Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ProgBar As System.Windows.Forms.ProgressBar
+    Friend WithEvents Copyright As Label
+    Friend WithEvents logo As PictureBox
 End Class

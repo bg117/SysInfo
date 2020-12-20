@@ -102,23 +102,28 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="about.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="about.Designer.vb">
-      <DependentUpon>about.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="abt.Designer.vb">
-      <DependentUpon>abt.vb</DependentUpon>
-    </Compile>
-    <Compile Include="abt.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="loading.Designer.vb">
       <DependentUpon>loading.vb</DependentUpon>
     </Compile>
     <Compile Include="loading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemInformationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemInformationForm.Designer.vb">
+      <DependentUpon>SystemInformationForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutSysInfo.Designer.vb">
+      <DependentUpon>AboutSysInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutSysInfo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -127,11 +132,6 @@
       <DependentUpon>Application.myapp</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -139,14 +139,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="about.resx">
-      <DependentUpon>about.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="abt.resx">
-      <DependentUpon>abt.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="loading.resx">
       <DependentUpon>loading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemInformationForm.resx">
+      <DependentUpon>SystemInformationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutSysInfo.resx">
+      <DependentUpon>AboutSysInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -202,6 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pclogo.ico" />
+    <None Include="Resources\xbutton.ico" />
+    <None Include="Resources\eula.ico" />
+    <None Include="Resources\save.ico" />
     <None Include="Resources\info.ico" />
     <None Include="Resources\pclogo.ico" />
   </ItemGroup>
