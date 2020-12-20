@@ -106,7 +106,7 @@ Copyright © OpenCode 2020
 
 Made by Kian Gabriel Arambulo
 
-<sup>Last updated: December 19, 2020</sup>
+<sup>Last updated: December 20, 2020</sup>
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=kiangabrielarambulo%40gmail.com&currency_code=PHP)
 
