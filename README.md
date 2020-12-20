@@ -98,9 +98,11 @@ OK, here are the changes:
 
 +updated the About section
 
+-SysInfo now always runs as administrator due to adding the drive type as it will give an unhandled exception (access denied error) if not run as admin. 
 
+If you have discovered bugs, please post in Issues.
 
-
+‎
 
 Copyright © OpenCode 2020
 
