@@ -202,6 +202,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pclogo.ico" />
+    <None Include="Resources\xplogonil.png" />
+    <None Include="Resources\xplogo.png" />
+    <None Include="Resources\windows-xp-2-570110 %281%29.ico" />
+    <None Include="Resources\windows-xp-2-570110.ico" />
+    <None Include="Resources\pclogo10.ico" />
+    <None Include="Resources\pclogo10x16.ico" />
+    <None Include="Resources\pclogo16.ico" />
+    <None Include="Resources\save2.ico" />
+    <None Include="Resources\info2.ico" />
+    <None Include="Resources\close - Copy.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\minbutton - Copy.png" />
+    <None Include="Resources\xbutton.png" />
+    <None Include="Resources\minbutton.png" />
     <None Include="Resources\xbutton.ico" />
     <None Include="Resources\eula.ico" />
     <None Include="Resources\save.ico" />

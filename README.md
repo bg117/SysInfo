@@ -1,7 +1,7 @@
 # SysInfo
 Displays information about your system.
 
-Compile using Microsoft Visual Studio 2019. Older versions not guaranteed to work. Needs .NET Framework 4 Client Profile to work.
+Compile using Microsoft Visual Studio 2019. Older versions not guaranteed to work. Needs .NET Framework 4.5 to work.
 
 ## Compile without contributing
 Download the source files. (DON'T DOWNLOAD THE SOURCE FILES FROM THE RELEASES SECTION!) To compile, choose `Release | AnyCPU`, go to the Build tab, press Build Solution, and you're done. Go to SysInfo\bin\Release to see the actual program.
@@ -76,13 +76,29 @@ Soon, if the changes passed, I'll be merging all your changes into the master br
 ## Description
 
 This is a simple application that displays information (Windows version, build, CPU, etc.) about your system.
-Works on Vista, 7, 8, 8.1, and Windows 10. XP not yet tested.
+Works on Vista, 7, 8, 8.1, and Windows 10. XP doesn't work as it does not support .NET Framework 4.5.
 
 # Changelog
 
+## SysInfo version 1.0.0.1b is here
+
+This is a pretty minor update. This update changes looks and functionality.
+
+Changes:
+
++**Finally, custom title bars!**
+
++added a button to switch between XP Visual Styles and Classic
+
++replaced About and Save buttons for Windows 10 (Windows 8.1 and lower versions not affected)
+
++replaced PC icon for Windows 10 (Windows 8.1 and lower versions not affected)
+
+If you have discovered bugs, please post in issues.
+
 ## SysInfo version 1.0.0.0b now released!
 
-Yeah, it was a quick transition from alpha to beta...
+Yeah, it's quite a quick transition from alpha to beta...
 
 OK, here are the changes:
 
@@ -108,7 +124,7 @@ Copyright © OpenCode 2020
 
 Made by Kian Gabriel Arambulo
 
-<sup>Last updated: December 20, 2020</sup>
+<sup>Last updated: December 21, 2020</sup>
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=kiangabrielarambulo%40gmail.com&currency_code=PHP)
 
