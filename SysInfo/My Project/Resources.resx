@@ -118,52 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="xplogonil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xplogonil.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="info10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minbutton - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minbutton - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mswinxp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xp.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="save2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="save10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clsbtnhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cls-9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconhelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconhelp-01-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="redmond10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\redmond10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\redmond10.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="xplogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xplogo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pclogo16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pclogo16.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pclogo10x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pclogo10x16.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clsbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cls9unhover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconhelpblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconhelpenter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minbuttonhover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="redmond7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\redmond7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\redmond7.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minbutton - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pclogo10x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pclogo10x16.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pclogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pclogo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pclogo10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pclogo10.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="xplogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xplogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="xplogonil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xplogonil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

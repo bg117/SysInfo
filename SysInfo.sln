@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
-MinimumVisualStudioVersion = 10.0.40219.1
+VisualStudioVersion = 16.8.30804.86
+MinimumVisualStudioVersion = 9.0.21022.8
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SysInfo", "SysInfo\SysInfo.vbproj", "{AC62E761-A558-4572-85D8-D52C1FE75CB4}"
 EndProject
 Global

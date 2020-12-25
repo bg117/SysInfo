@@ -13,12 +13,12 @@
         End If
     End Sub
 
-    Private Sub CloseBut_MouseHover(sender As Object, e As EventArgs) Handles CloseBut.MouseHover
-        Me.CloseBut.Image = Global.SysInfo.My.Resources.Resources.close___Copy
+    Private Sub CloseBut_MouseHover(sender As Object, e As EventArgs) Handles CloseBut.MouseEnter
+        Me.CloseBut.Image = Global.SysInfo.My.Resources.Resources.clsbtnhover
     End Sub
 
     Private Sub CloseBut_MouseLeave(sender As Object, e As EventArgs) Handles CloseBut.MouseLeave
-        Me.CloseBut.Image = Global.SysInfo.My.Resources.Resources.close
+        Me.CloseBut.Image = Global.SysInfo.My.Resources.Resources.clsbtn
     End Sub
 
     Private Sub CloseButtonControl_Click(sender As Object, e As EventArgs)
@@ -27,10 +27,6 @@
 
     Private Sub CloseClick(sender As Object, e As EventArgs) Handles close.Click
         MyBase.Close()
-    End Sub
-
-    Private Sub Form1_Paint(sender As Object, e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
-        ControlPaint.DrawBorder(e.Graphics, Me.ClientRectangle, Color.FromArgb(0, 120, 215), ButtonBorderStyle.Solid)
     End Sub
 
     Private Sub githublink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles githublink.LinkClicked
@@ -42,12 +38,12 @@
         WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub minimize_MouseHover(sender As Object, e As EventArgs) Handles minimize.MouseHover
-        Me.minimize.Image = Global.SysInfo.My.Resources.Resources.minbutton
+    Private Sub minimize_MouseHover(sender As Object, e As EventArgs) Handles minimize.MouseEnter
+        Me.minimize.Image = Global.SysInfo.My.Resources.Resources.minbuttonhover
     End Sub
 
     Private Sub minimize_MouseLeave(sender As Object, e As EventArgs) Handles minimize.MouseLeave
-        Me.minimize.Image = Global.SysInfo.My.Resources.Resources.minbutton___Copy
+        Me.minimize.Image = Global.SysInfo.My.Resources.Resources.minbutton
     End Sub
 
     Private Sub Panel7_MouseDown(sender As Object, e As MouseEventArgs) Handles TitleBarAbt.MouseDown

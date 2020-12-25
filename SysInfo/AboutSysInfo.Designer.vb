@@ -38,6 +38,10 @@ Partial Class AboutSysInfo
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Min = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.TitleBarAbt.SuspendLayout()
         CType(Me.CloseBut, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.minimize, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,7 +77,7 @@ Partial Class AboutSysInfo
         Me.versionabtpc.Name = "versionabtpc"
         Me.versionabtpc.Size = New System.Drawing.Size(163, 15)
         Me.versionabtpc.TabIndex = 2
-        Me.versionabtpc.Text = "SysInfo version 1.0.0.1b (Beta)"
+        Me.versionabtpc.Text = "SysInfo version 1.0.0.2b (Beta)"
         '
         'assemver
         '
@@ -118,13 +122,12 @@ Partial Class AboutSysInfo
         '
         'TitleBarAbt
         '
-        Me.TitleBarAbt.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(120, Byte), Integer), CType(CType(215, Byte), Integer))
+        Me.TitleBarAbt.BackColor = System.Drawing.Color.FromArgb(CType(CType(214, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(233, Byte), Integer))
         Me.TitleBarAbt.Controls.Add(Me.CloseBut)
         Me.TitleBarAbt.Controls.Add(Me.minimize)
         Me.TitleBarAbt.Controls.Add(Me.TitleBar)
         Me.TitleBarAbt.Controls.Add(Me.PictureBox3)
         Me.TitleBarAbt.Controls.Add(Me.Panel8)
-        Me.TitleBarAbt.Dock = System.Windows.Forms.DockStyle.Top
         Me.TitleBarAbt.Location = New System.Drawing.Point(0, 0)
         Me.TitleBarAbt.Name = "TitleBarAbt"
         Me.TitleBarAbt.Size = New System.Drawing.Size(431, 26)
@@ -132,7 +135,7 @@ Partial Class AboutSysInfo
         '
         'CloseBut
         '
-        Me.CloseBut.Image = Global.SysInfo.My.Resources.Resources.close
+        Me.CloseBut.Image = Global.SysInfo.My.Resources.Resources.clsbtn
         Me.CloseBut.Location = New System.Drawing.Point(405, 0)
         Me.CloseBut.Name = "CloseBut"
         Me.CloseBut.Size = New System.Drawing.Size(26, 26)
@@ -142,7 +145,7 @@ Partial Class AboutSysInfo
         '
         'minimize
         '
-        Me.minimize.Image = Global.SysInfo.My.Resources.Resources.minbutton___Copy
+        Me.minimize.Image = Global.SysInfo.My.Resources.Resources.minbutton
         Me.minimize.Location = New System.Drawing.Point(380, 0)
         Me.minimize.Name = "minimize"
         Me.minimize.Size = New System.Drawing.Size(26, 26)
@@ -153,9 +156,10 @@ Partial Class AboutSysInfo
         'TitleBar
         '
         Me.TitleBar.AutoSize = True
+        Me.TitleBar.Enabled = False
         Me.TitleBar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TitleBar.ForeColor = System.Drawing.Color.White
-        Me.TitleBar.Location = New System.Drawing.Point(24, 6)
+        Me.TitleBar.ForeColor = System.Drawing.Color.Black
+        Me.TitleBar.Location = New System.Drawing.Point(175, 6)
         Me.TitleBar.Name = "TitleBar"
         Me.TitleBar.Size = New System.Drawing.Size(81, 15)
         Me.TitleBar.TabIndex = 42
@@ -186,12 +190,52 @@ Partial Class AboutSysInfo
         Me.Min.InitialDelay = 100
         Me.Min.ReshowDelay = 20
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Black
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(431, 1)
+        Me.Panel2.TabIndex = 42
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Black
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Location = New System.Drawing.Point(0, 1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1, 192)
+        Me.Panel1.TabIndex = 43
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.Black
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel3.Location = New System.Drawing.Point(430, 1)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1, 192)
+        Me.Panel3.TabIndex = 44
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.Black
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel4.Location = New System.Drawing.Point(1, 192)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(429, 1)
+        Me.Panel4.TabIndex = 45
+        '
         'AboutSysInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(431, 193)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TitleBarAbt)
         Me.Controls.Add(Me.githublink)
         Me.Controls.Add(Me.close)
@@ -231,4 +275,8 @@ Partial Class AboutSysInfo
     Friend WithEvents Min As ToolTip
     Friend WithEvents minimize As PictureBox
     Friend WithEvents CloseBut As PictureBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel4 As Panel
 End Class

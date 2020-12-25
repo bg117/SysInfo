@@ -76,9 +76,38 @@ Soon, if the changes passed, I'll be merging all your changes into the master br
 ## Description
 
 This is a simple application that displays information (Windows version, build, CPU, etc.) about your system.
-Works on Vista, 7, 8, 8.1, and Windows 10. XP doesn't work as it does not support .NET Framework 4.5.
+Works on XP, Vista, 7, 8, 8.1, and Windows 10.
+
+‎
 
 # Changelog
+## Sysinfo version 1.0.0.2b (CHRISTMAS UPDATE)
+
+MERRY CHRISTMAS YA FILTHY ANIMALS!
+
+You might be thinking: "Why did it take 4 days to release this instead of the usual 1 day?"
+
+Well the answer is this: I was adding new features AND waiting for Christmas! I have added new features such as:
+
++added support for Windows XP (x64 version and the normal one)
+
++added a new Performance* tab
+
++extended the title bar
+
++replaced radio buttons with checkbox (to make the form less cluttered)
+
++moved the Help and Export buttons to the title bar
+
++changed the title bar color to match Visual Studio's "Blue" theme
+
++replaced Close and Help icons to make it more Microsoft-y
+
++replaced Loading bar with Continuous style
+
+-removed most of the PNG files and replaced it with ICO icons
+
+<sup>* = Performance tab is still in early stages. Please report in Issues if you find any bugs.</sup>
 
 ## SysInfo version 1.0.0.1b is here
 
@@ -118,13 +147,11 @@ OK, here are the changes:
 
 If you have discovered bugs, please post in Issues.
 
-‎
-
 Copyright © OpenCode 2020
 
 Made by Kian Gabriel Arambulo
 
-<sup>Last updated: December 21, 2020</sup>
+<sup>Last updated: December 25, 2020</sup>
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=kiangabrielarambulo%40gmail.com&currency_code=PHP)
 

@@ -11,7 +11,7 @@
     <AssemblyName>SysInfo</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <PublishUrl>publish\</PublishUrl>
@@ -60,6 +60,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <OptionCompare>Binary</OptionCompare>
@@ -144,6 +147,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemInformationForm.resx">
       <DependentUpon>SystemInformationForm.vb</DependentUpon>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutSysInfo.resx">
       <DependentUpon>AboutSysInfo.vb</DependentUpon>
@@ -202,6 +206,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pclogo.ico" />
+    <None Include="Resources\perf-01.png" />
+    <None Include="Resources\home-01.png" />
+    <None Include="Resources\hometab-01.png" />
+    <None Include="Resources\cls9unhover.ico" />
+    <None Include="Resources\xp.ico" />
+    <None Include="Resources\xp.png" />
+    <None Include="Resources\xplogonil.ico" />
+    <None Include="Resources\xplogo.ico" />
+    <None Include="Resources\redmond10.ico" />
+    <None Include="Resources\redmond7.ico" />
+    <None Include="Resources\iconhelpenter.png" />
+    <None Include="Resources\iconhelp-01-01-01.png" />
+    <None Include="Resources\iconhelp-01-01.png" />
+    <None Include="Resources\iconhelp-01.png" />
+    <None Include="Resources\iconhelp.png" />
+    <None Include="Resources\cls9unhover.png" />
+    <None Include="Resources\cls-9.png" />
     <None Include="Resources\xplogonil.png" />
     <None Include="Resources\xplogo.png" />
     <None Include="Resources\windows-xp-2-570110 %281%29.ico" />

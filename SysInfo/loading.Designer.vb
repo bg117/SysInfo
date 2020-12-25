@@ -48,8 +48,10 @@ Partial Class loading
         'ProgBar
         '
         Me.ProgBar.Location = New System.Drawing.Point(13, 55)
+        Me.ProgBar.MarqueeAnimationSpeed = 25
         Me.ProgBar.Name = "ProgBar"
         Me.ProgBar.Size = New System.Drawing.Size(473, 23)
+        Me.ProgBar.Step = 15
         Me.ProgBar.TabIndex = 1
         '
         'Copyright
