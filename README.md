@@ -106,6 +106,8 @@ This version might have skipped a few versions, but it's OK. I have started from
 
 +added the System menu (right-click title bar thing)
 
++added animations
+
 +added tabs
 
 +added icons to common elements
