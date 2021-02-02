@@ -84,7 +84,7 @@ Works on XP, Vista, 7, 8, 8.1, and Windows 10.
 ‎
 
 # Changelog
-## Sysinfo version 1.0.0.2b (CHRISTMAS UPDATE)
+## SysInfo version 1.0.0.2b (CHRISTMAS UPDATE)
 
 MERRY CHRISTMAS YA FILTHY ANIMALS!
 
