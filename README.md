@@ -3,9 +3,6 @@ Displays information about your system.
 
 Compile using Microsoft Visual Studio 2019. Older versions not guaranteed to work. Needs .NET Framework 4.5 to work.
 
-#### UPDATE
-SysInfo is currently transitioning to WPF. Please wait for the next release.
-
 ## Compile without contributing
 Download the source files. (DON'T DOWNLOAD THE SOURCE FILES FROM THE RELEASES SECTION!) To compile, choose `Release | AnyCPU`, go to the Build tab, press Build Solution, and you're done. Go to SysInfo\bin\Release to see the actual program.
 
@@ -84,6 +81,41 @@ Works on XP, Vista, 7, 8, 8.1, and Windows 10.
 ‎
 
 # Changelog
+
+## SysInfo version 1.0.0.7b
+
+VERY BIG UPDATE!!!!!!!!!
+
+This version might have skipped a few versions, but it's OK. I have started from scratch since version 1.0.0.3b (which will never be released) and remade the whole thing in WPF and C#. I am so happy about how it turned out. This changed the overall look of the program from a simple, WinForms project to a complicated and beautiful work of art with the help of WPF and some other tools. 'Nuff said, here are the changes:
+
++redesigned the app from scratch
+
++used C# instead of VB.NET and WPF instead of Windows Forms
+
++added a resolution changer
+
++more interactive style
+
++Fluent "design"
+
++more of a Windows-ish style (Settings app)
+
++more features such as context menus, tooltips, and beautiful design
+
++added a menu for easy access to common controls
+
++added the System menu (right-click title bar thing)
+
++added tabs
+
++added icons to common elements
+
+-removed support for XP
+
+We are investigating an issue with the Performance tab which causes the application to crash on virtual machines (and possibly real machines as well). Stay tuned for fixes.
+
+If you have discovered bugs, please post in Issues.
+
 ## SysInfo version 1.0.0.2b (CHRISTMAS UPDATE)
 
 MERRY CHRISTMAS YA FILTHY ANIMALS!
@@ -126,7 +158,7 @@ Changes:
 
 +replaced PC icon for Windows 10 (Windows 8.1 and lower versions not affected)
 
-If you have discovered bugs, please post in issues.
+If you have discovered bugs, please post in Issues.
 
 ## SysInfo version 1.0.0.0b now released!
 
