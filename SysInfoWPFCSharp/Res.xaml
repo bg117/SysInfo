@@ -1,0 +1,56 @@
+﻿<Page x:Class="SysInfo.Res"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mD="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:SysInfo"
+      xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+      xmlns:wpf1="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d"
+      d:DesignHeight="598" d:DesignWidth="448"
+      Title="Resolution changer" Width="Auto" Height="Auto" VerticalAlignment="Top">
+
+    <Grid>
+
+        <ScrollViewer Style="{x:Null}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="322" HorizontalAlignment="Left" Margin="10,50,0,92">
+            <ListBox Style="{x:Null}" x:Name="ListViewR" Padding="0" VerticalContentAlignment="Stretch" Width="321" BorderThickness="0" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" Margin="0" MouseDoubleClick="ListViewR_MouseDoubleClick">
+            </ListBox>
+        </ScrollViewer>
+
+        <StackPanel Background="White" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-1,0,0" Height="47">
+            <Border BorderBrush="{x:Null}" Height="50" HorizontalAlignment="Left" Margin="10,0,10,10">
+                <TextBlock TextWrapping="NoWrap" Text="Resolution Changer" FontSize="26" VerticalAlignment="Top" Margin="0,6,0,8" HorizontalAlignment="Left" />
+            </Border>
+        </StackPanel>
+        <Button mD:ButtonAssist.CornerRadius="0" BorderThickness="1,1,1,1" mD:ShadowAssist.ShadowDepth="Depth0" x:Name="ApplybuttonListView" FontSize="12" Click="ClickApply" Margin="344,0,0,0" Height="24" HorizontalAlignment="Left" Width="100">
+            <DockPanel>
+                <Image x:Name="Img1" />
+                <Label FontWeight="Normal" Content="Apply" Height="24" Margin="0,0,0,-4" Foreground="Black" VerticalAlignment="Bottom" />
+            </DockPanel>
+        </Button>
+        <Grid Background="#FFFFFFFF" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="87" Width="448">
+            <Label Content="Resolution" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="35,0,0,6" Height="25.29" Width="68.367" />
+
+            <Button mD:ButtonAssist.CornerRadius="0" VerticalAlignment="Bottom" mD:ShadowAssist.ShadowDepth="Depth0" x:Name="Applybutton" FontSize="12" Click="CallRes" Margin="293,0,0,35" Height="24" HorizontalAlignment="Left" Width="90">
+                <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" LastChildFill="False">
+                    <Image x:Name="Img" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Label FontWeight="Normal" Content="Apply" Height="24" Margin="0,0,0,0" Foreground="Black" VerticalAlignment="Center" DockPanel.Dock="Right" />
+                </DockPanel>
+            </Button>
+            <Button FontWeight="Normal" VerticalAlignment="Bottom" Content="Revert" mD:ButtonAssist.CornerRadius="0" mD:ShadowAssist.ShadowDepth="Depth0" x:Name="Revert" FontSize="12" Click="RevertRes" Margin="293,0,0,6" Height="24" BorderThickness="1" HorizontalAlignment="Left" Width="90" />
+            <wpf1:MaskedTextBox PromptChar=" " InsertKeyMode="Insert" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" ClipToBounds="True" Height="24" Width="120"  x:Name="ResBox" FontFamily="Consolas" FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="9,0,0,35" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Normal" TextOptions.TextFormattingMode="Ideal" TextOptions.TextHintingMode="Fixed" TextWrapping="NoWrap" MaxLines="1" IsUndoEnabled="True" ToolTip="Sets the custom resolution">
+                <i:Interaction.Behaviors>
+                    <local:MaskVisibilityBehavior/>
+                </i:Interaction.Behaviors>
+            </wpf1:MaskedTextBox>
+            <CheckBox Foreground="Black" Background="LightBlue" x:Name="CheckBox" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Change refresh rate and color depth (EXPERIMENTAL!)"  Margin="10,0,0,63" Click="DisableEnableHzControl" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="19.29" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0,0,0,1" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" />
+            <wpf1:IntegerUpDown ToolTip="Sets the custom refresh rate" Value="60" Name="HzControl" Margin="136,0,0,35" IsEnabled="False" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="24" Width="72" />
+            <wpf1:IntegerUpDown ToolTip="Sets the custom color depth (in bits per pixel)" Value="60" x:Name="BitsPerPel" Margin="213.5,0,0,35" IsEnabled="False" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="24" Width="72" />
+            <Label Content="Refresh rate" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="132.64,0,0,6" Height="25.29" Width="76.36" />
+            <Label Content="Color depth" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="210.5,0,0,6" Height="25.29" Width="80.5" />
+        </Grid>
+    </Grid>
+</Page>

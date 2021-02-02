@@ -1,0 +1,21 @@
+﻿<Page x:Class="SysInfo.About"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:DesignHeight="448" d:DesignWidth="598"
+      Title="About" Height="Auto">
+<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+    <StackPanel Orientation="Vertical">
+        <Border BorderBrush="{x:Null}" Height="50" HorizontalAlignment="Left" Margin="10">
+            <TextBlock x:Name="DisplayTextBlock" TextWrapping="NoWrap" Text="About SysInfo" FontSize="26" VerticalAlignment="Center" />
+        </Border>
+        <TextBlock Text="SysInfo" FontSize="20" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <TextBlock Text="This is a simple application designed to display information about your system." FontSize="13" Padding="10" Margin="0,-10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <TextBlock Text="This project is open-source. It can be found on https://github.com/TheOpenCodeTeam/SysInfo." FontSize="13" Padding="10" Margin="0,-15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <TextBlock Text="SysInfo version 1.0.0.7b" FontSize="13" Padding="10" Margin="0,-15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <TextBlock Text="Assembly version 1.0.1.0" FontSize="13" Padding="10" Margin="0,-15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+    </StackPanel>
+    </ScrollViewer>
+</Page>
