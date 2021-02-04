@@ -71,7 +71,7 @@ Submit the pull request.
 
 Soon, if the changes passed, I'll be merging all your changes into the master branch of this project. You will get a notification email once thechanges have been merged.
 
-#### Language: VB.NET
+#### Language: C#
 
 ## Description
 
