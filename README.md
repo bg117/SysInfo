@@ -3,6 +3,8 @@ Displays information about your system.
 
 Compile using Microsoft Visual Studio 2019. Older versions not guaranteed to work. Needs .NET Framework 4.5 to work.
 
+#### NEW UPDATE COMING VERY SOON!
+
 ## Compile without contributing
 Download the source files. (DON'T DOWNLOAD THE SOURCE FILES FROM THE RELEASES SECTION!) To compile, choose `Release | AnyCPU`, go to the Build tab, press Build Solution, and you're done. Go to SysInfo\bin\Release to see the actual program.
 
