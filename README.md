@@ -84,7 +84,7 @@ Works on XP, Vista, 7, 8, 8.1, and Windows 10.
 
 # Changelog
 
-Changelog can be found [here](../blob/master/CHANGELOG.md)
+Changelog can be found [here](../master/CHANGELOG.md)
 
 OpenCode 2021
 
