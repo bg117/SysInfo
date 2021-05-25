@@ -1,0 +1,20 @@
+# Ignore NuGet Packages
+*.nupkg
+**.nupkg
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
+**/.vs/
+**/.idea/
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
+!**/[Pp]ackages/repositories.config
+
+# SysInfo
+SysInfo/[Bb]in
+SysInfo/[Oo]bj
+SysInfo/[Pp]ackages
+
+# syslib32
+syslib32/bin
+syslib32/obj
+syslib32/packages

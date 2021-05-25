@@ -1,24 +1,28 @@
 # SysInfo
+
 Displays information about your system.
 
-Compile using Microsoft Visual Studio 2019. Older versions not guaranteed to work. Needs .NET Framework 4.5 to work.
+Compile using Microsoft Visual Studio 2019. Older versions not guaranteed to work. Needs .NET Framework 4.5.2 to work.
 
-#### UPDATE
-SysInfo is currently transitioning to WPF. Please wait for the next release.
+Changelog can be found [here](../master/CHANGELOG.md)
 
 ## Compile without contributing
+
 Download the source files. (DON'T DOWNLOAD THE SOURCE FILES FROM THE RELEASES SECTION!) To compile, choose `Release | AnyCPU`, go to the Build tab, press Build Solution, and you're done. Go to SysInfo\bin\Release to see the actual program.
 
 ## Contribute to project
+
 Download and install git [here](https://git-scm.com/downloads).
 
 ### Fork the repo
+
 Click the `Fork` button in the top-right corner of the screen. This will create a repo in your account.
 
 ### Clone the repo
+
 Click the `Clone` button in the top-right corner of the screen.
 
-Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the `Code` button and then click the ![alt text](https://i.ibb.co/NTwxwVp/githubcopy.png "Copy to Clipboard") icon.
+Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the `Code` button and then click the ![Copy to Clipboard](https://i.ibb.co/wBGkyhk/icon.png "Copy to Clipboard") icon.
 
 Open up git Bash and type in the following:
 
@@ -28,7 +32,7 @@ For example:
 
 `git clone https://github.com/username/SysInfo.git "destination path"`
 
-where `username` is your GitHub username and "destination path" is the path where you want the cloned repo to be placed on your computer. Here you're copying the contents of the first-contributions repository on GitHub to your computer.
+where `username` is your GitHub username and "destination path" is the path where you want the cloned repo to be placed on your computer. Here you're copying the contents of the SysInfo repository on GitHub to your computer.
 
 ### Create a branch
 
@@ -42,11 +46,11 @@ Don't close git yet!
 
 ### Make changes and commit them
 
-Now, you can fix the code from here (if there's something wrong). **MAKE SURE TO EMPTY THE bin AND obj FOLDERS!**
+Now, you can fix the code from here (if there's something wrong).
 
 Don't forget to put your name in the CONTRIBUTORS.md file!
 
-After you're done fixing the code and testing it (and emptying the bin and obj folders), type this into git Bash:
+After you're done fixing the code and testing it, type this into git Bash:
 
 `git add -A`
 
@@ -74,88 +78,19 @@ Submit the pull request.
 
 Soon, if the changes passed, I'll be merging all your changes into the master branch of this project. You will get a notification email once thechanges have been merged.
 
-#### Language: VB.NET
+#### Language: C#
 
-## Description
+# Description
 
 This is a simple application that displays information (Windows version, build, CPU, etc.) about your system.
-Works on XP, Vista, 7, 8, 8.1, and Windows 10.
-
-‎
+Works on Windows 7, 8, 8.1, and 10.
 
 # Changelog
-## SysInfo version 1.0.0.2b (CHRISTMAS UPDATE)
 
-MERRY CHRISTMAS YA FILTHY ANIMALS!
+Changelog can be found [here](../master/CHANGELOG.md)
 
-You might be thinking: "Why did it take 4 days to release this instead of the usual 1 day?"
+© OpenCode 2021
 
-Well the answer is this: I was adding new features AND waiting for Christmas! I have added new features such as:
-
-+added support for Windows XP (x64 version and the normal one)
-
-+added a new Performance* tab
-
-+extended the title bar
-
-+replaced radio buttons with checkbox (to make the form less cluttered)
-
-+moved the Help and Export buttons to the title bar
-
-+changed the title bar color to match Visual Studio's "Blue" theme
-
-+replaced Close and Help icons to make it more Microsoft-y
-
-+replaced Loading bar with Continuous style
-
--removed most of the PNG files and replaced it with ICO icons
-
-<sup>* = Performance tab is still in early stages. Please report in Issues if you find any bugs.</sup>
-
-## SysInfo version 1.0.0.1b is here
-
-This is a pretty minor update. This update changes looks and functionality.
-
-Changes:
-
-+**Finally, custom title bars!**
-
-+added a button to switch between XP Visual Styles and Classic
-
-+replaced About and Save buttons for Windows 10 (Windows 8.1 and lower versions not affected)
-
-+replaced PC icon for Windows 10 (Windows 8.1 and lower versions not affected)
-
-If you have discovered bugs, please post in issues.
-
-## SysInfo version 1.0.0.0b now released!
-
-Yeah, it's quite a quick transition from alpha to beta...
-
-OK, here are the changes:
-
-+added the ability to export the information as a .snfo file
-
-+added tooltips
-
-+enabled XP Visual Styles
-
-+added Windows home path and drive type (HDD, SSD, etc.)
-
-+replaced checkbox with radio buttons to switch between basic and advanced system information
-
-+updated the About section
-
--SysInfo now always runs as administrator due to adding the drive type as it will give an unhandled exception (access denied error) if not run as admin. 
-
-If you have discovered bugs, please post in Issues.
-
-Copyright © OpenCode 2020
-
-Made by Kian Gabriel Arambulo
-
-<sup>Last updated: December 25, 2020</sup>
+<sup>Last updated: May 25, 2021</sup>
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=kiangabrielarambulo%40gmail.com&currency_code=PHP)
-
-[![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
