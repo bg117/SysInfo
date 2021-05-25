@@ -160,4 +160,4 @@ If you have discovered bugs, please post in Issues.
 
 Copyright © OpenCode 2020
 
-<sup>Last updated: May 11, 2021</sup>
+<sup>Last updated: May 25, 2021</sup>
