@@ -1,0 +1,346 @@
+﻿<fw:AcrylicWindow x:Class="SysInfo.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:ui="http://schemas.modernwpf.com/2019"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+                  xmlns:local="clr-namespace:SysInfo"
+                  xmlns:animation="clr-namespace:SourceChord.FluentWPF.Animations;assembly=FluentWPF"
+                  mc:Ignorable="d"
+                  AcrylicWindowStyle="Normal" Left="0" Top="0"
+                  FontSize="14"
+                  MinWidth="760" MinHeight="360"
+                  Height="500" Width="760" WindowStartupLocation="CenterOwner"
+                  Closing="Close"
+                  Deactivated="LostFocus" Activated="GainFocus"
+                  Loaded="LoadWindow"
+                  ExtendViewIntoTitleBar="True"
+                  ui:ThemeManager.IsThemeAware="True"
+                  
+                  x:Name="W" Icon="icon.png" NoiseOpacity="0">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MainWindow.OptionsCommand}" Executed="ExportButton" />
+    </Window.CommandBindings>
+
+    <Window.Resources>
+        <Style x:Key="CaptionButtonStyleKey" TargetType="{x:Type Button}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Width" Value="45" />
+            <Setter Property="Height" Value="29" />
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="UseLayoutRounding" Value="True" />
+            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+        </Style>
+        <Style x:Key="BackCaptionButtonStyleKey" TargetType="{x:Type Button}" BasedOn="{StaticResource CaptionButtonStyleKey}">
+            <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAccentBrush}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border"
+                                                         To="0.0" Duration="0:0:0.150">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseIn"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <animation:BrushAnimation Storyboard.TargetProperty="(TextBlock.Foreground)" Storyboard.TargetName="contentPresenter"
+                                                                  Duration="0:0:0.150" AutoReverse="False">
+                                                <animation:BrushAnimation.EasingFunction>
+                                                    <SineEase EasingMode="EaseInOut"/>
+                                                </animation:BrushAnimation.EasingFunction>
+                                            </animation:BrushAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border"
+                                                         To="1" Duration="0:0:0.150">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <animation:BrushAnimation Storyboard.TargetProperty="(TextBlock.Foreground)" Storyboard.TargetName="contentPresenter"
+                                                                  To="White" Duration="0:0:0.150" AutoReverse="False">
+                                                <animation:BrushAnimation.EasingFunction>
+                                                    <SineEase EasingMode="EaseInOut"/>
+                                                </animation:BrushAnimation.EasingFunction>
+                                            </animation:BrushAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border"
+                                                         To="0.6" Duration="0:0:0.150">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <ExponentialEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <animation:BrushAnimation Storyboard.TargetProperty="(TextBlock.Foreground)" Storyboard.TargetName="contentPresenter"
+                                                                  To="White" Duration="0:0:0.150" AutoReverse="False">
+                                                <animation:BrushAnimation.EasingFunction>
+                                                    <SineEase EasingMode="EaseInOut"/>
+                                                </animation:BrushAnimation.EasingFunction>
+                                            </animation:BrushAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border"
+                                                         To="0.0" Duration="0:0:0.150">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseIn"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="contentPresenter"
+                                                         To="0.3" Duration="0:0:0.150">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <ExponentialEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border x:Name="border" Background="{TemplateBinding Background}" />
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="GrayCaptionButtonStyleKey" TargetType="{x:Type Button}" BasedOn="{StaticResource CaptionButtonStyleKey}">
+            <Setter Property="Background" Value="DarkGray" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border"
+                                                         To="0.0" Duration="0:0:0.150">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseIn"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border"
+                                                         To="0.6" Duration="0:0:0.150">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <ExponentialEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border"
+                                                         To="1" Duration="0:0:0.150">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <ExponentialEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border"
+                                                         To="0.0" Duration="0:0:0.150">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <CubicEase EasingMode="EaseIn"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="contentPresenter"
+                                                         To="0.3" Duration="0:0:0.150">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <ExponentialEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border x:Name="border" Background="{TemplateBinding Background}" />
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="255" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid fw:PointerTracker.Enabled="True" Grid.Column="1" Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
+              VerticalAlignment="Stretch" Width="Auto" Margin="0,0,-1,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <TextBlock x:Name="RunningInVm2" Text="Running in a VM" Foreground="Red" Margin="5" Visibility="Hidden" ToolTip="Some features may not work while running in a virtual machine."/>
+            </StackPanel>
+            <ui:Frame Background="Transparent" x:Name="Frame1" Source="..\Pages\Home.xaml"
+                      Margin="0,32,0,0" NavigationUIVisibility="Hidden" />
+            <Button Style="{StaticResource ButtonRevealStyle}" Margin="0,0,20,24" Background="Transparent" Width="37" Height="32"
+                HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="ShowContextMenu">
+                <Grid>
+                    <TextBlock Text="&#xE712;" FontFamily="{StaticResource TitlebarIcons}"/>
+                </Grid>
+                <Button.ContextMenu>
+                    <ContextMenu x:Name="cMenu">
+                        <MenuItem
+                        Header="Export system information"
+                        Click="ExportButton"
+                        InputGestureText="Ctrl+Shift+E">
+                            <MenuItem.Icon>
+                                <TextBlock Text="&#xE72D;" FontFamily="{StaticResource TitlebarIcons}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem
+                        Header="Exit"
+                        InputGestureText="Alt+F4"
+                        Click="CloseApp">
+                            <MenuItem.Icon>
+                                <TextBlock Text="&#xE711;" FontFamily="{StaticResource TitlebarIcons}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem
+                        Header="Options"
+                        Click="ShowOptionsPage">
+                            <MenuItem.Icon>
+                                <TextBlock Text="&#xE713;" FontFamily="{StaticResource TitlebarIcons}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem
+                        Header="Feedback"
+                        Click="ShowFeedbackPage">
+                            <MenuItem.Icon>
+                                <TextBlock Text="&#xED15;" FontFamily="{StaticResource TitlebarIcons}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+        </Grid>
+        <Grid Grid.Column="0" x:Name="LeftGrid" fw:PointerTracker.Enabled="True" HorizontalAlignment="Left"
+              Background="Transparent" Width="255">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <TextBlock x:Name="Runninginvm" Text="Running in a VM" Foreground="Red" Margin="5"
+                           VerticalAlignment="Bottom" Visibility="Hidden" ToolTip="Some features may not work while running in a virtual machine."/>
+            </StackPanel>
+            <ListView x:Name="Tabs" Background="Transparent" Margin="0,75,0,0">
+                <ListViewItem Tag="sysinfo" PreviewMouseLeftButtonUp="ClickListViewItem"
+                              >
+                    <ui:SimpleStackPanel>
+                        <Label Content="&#xE977;" FontSize="16" FontFamily="{StaticResource TitlebarIcons}"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,-19" />
+                        <Label Content="System Information" Margin="24,0,0,0" VerticalAlignment="Center"
+                               HorizontalAlignment="Left" />
+                    </ui:SimpleStackPanel>
+                </ListViewItem>
+                <ListViewItem Tag="notnewpe"  PreviewMouseLeftButtonUp="ClickListViewItem"
+                              >
+                    <ui:SimpleStackPanel>
+                        <Label Content="&#xEC4A;" FontSize="16" FontFamily="{StaticResource TitlebarIcons}"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,-19" />
+                        <Label Content="Performance" Margin="24,0,0,0" VerticalAlignment="Center"
+                               HorizontalAlignment="Left" />
+                    </ui:SimpleStackPanel>
+                </ListViewItem>
+                <ListViewItem Tag="res" PreviewMouseLeftButtonUp="ClickListViewItem"
+                              >
+                    <ui:SimpleStackPanel>
+                        <Label Content="&#xE7F4;" FontSize="16" FontFamily="{StaticResource TitlebarIcons}"
+                               HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,-19" />
+                        <Label Content="Resolution" Margin="24,0,0,0" VerticalAlignment="Center"
+                               HorizontalAlignment="Left" />
+                    </ui:SimpleStackPanel>
+                </ListViewItem>
+            </ListView>
+            <StackPanel Margin="0,32,0,0">
+
+                <TextBlock Text="System" Margin="15,15,0,0" FontSize="14" FontWeight="DemiBold"
+                           HorizontalAlignment="Left" />
+            </StackPanel>
+        </Grid>
+
+        <Grid IsHitTestVisible="True" x:Name="Bar" VerticalAlignment="Top" Grid.ColumnSpan="2"
+              Grid.Column="0"
+              MouseLeftButtonDown="FormMove" Margin="0"
+              Background="Transparent" Height="32">
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="TextElement.Foreground"
+                            Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsActive, ElementName=Window}" Value="False">
+                            <Setter Property="TextElement.Foreground"
+                                    Value="{DynamicResource SystemControlDisabledBaseMediumLowBrush}" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+
+            <StackPanel Orientation="Horizontal" Margin="0">
+                <StackPanel />
+
+                <Button
+                    Style="{StaticResource BackCaptionButtonStyleKey}"
+
+                    x:Name="BackButton"
+                    FontSize="10"
+                    Content="&#xE830;"
+                    FontFamily="{StaticResource TitlebarIcons}"
+                    Margin="0" Visibility="Hidden" Click="Back" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                <StackPanel x:Name="Title" Orientation="Horizontal" Margin="-40,0,0,0" HorizontalAlignment="Left">
+                    <TextBlock x:Name="titleName" FontSize="12" VerticalAlignment="Center"
+                               Margin="0,-2,0,0">
+                        SysInfo
+                        <TextBlock Text="(release candidate)"
+                                   Foreground="{DynamicResource SystemControlBackgroundAccentBrush}" />
+                    </TextBlock>
+                </StackPanel>
+
+            </StackPanel>
+            <Button
+                   Style="{StaticResource GrayCaptionButtonStyleKey}"
+                    x:Name="HomeButton"
+                    FontSize="14"
+                    Content="&#xE80F;"
+                    FontFamily="{StaticResource TitlebarIcons}"
+                    Margin="0,0,135,0" Click="HomeClick" HorizontalAlignment="Right" VerticalAlignment="Top">
+
+            </Button>
+            <Button
+                Click="HelpClick"
+                    Style="{StaticResource GrayCaptionButtonStyleKey}"
+                FontFamily="{StaticResource TitlebarIcons}"
+                    x:Name="HelpButton"
+                    FontSize="18"
+                    Content="&#xF13F;"
+                    Margin="0,0,180,0" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" HorizontalContentAlignment="Center"/>
+        </Grid>
+    </Grid>
+</fw:AcrylicWindow>

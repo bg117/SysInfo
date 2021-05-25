@@ -1,0 +1,641 @@
+<Application
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:ui="http://schemas.modernwpf.com/2019" 
+    xmlns:FluentWPF="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+    xmlns:Animations="clr-namespace:SourceChord.FluentWPF.Animations;assembly=FluentWPF" 
+    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+    xmlns:Converters="clr-namespace:SourceChord.FluentWPF.Converters;assembly=FluentWPF" 
+    x:Class="SysInfo.App" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    d1p1:Ignorable="d" >
+    
+    
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ui:ThemeResources />
+        <ui:XamlControlsResources />
+        <!-- Controls -->
+        <ResourceDictionary Source="pack://application:,,,/FluentWPF;component/Styles/Controls.xaml">
+          
+        </ResourceDictionary>
+      </ResourceDictionary.MergedDictionaries>
+      <Style x:Key="SquareCheck" TargetType="{x:Type CheckBox}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource CheckBoxBackgroundUnchecked}" />
+        <Setter Property="Foreground" Value="{DynamicResource CheckBoxForegroundUnchecked}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxBorderBrushUnchecked}" />
+        <Setter Property="Padding" Value="8,0,0,0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="FontFamily" Value="{DynamicResource ContentControlThemeFontFamily}" />
+        <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
+        <Setter Property="MinWidth" Value="120" />
+        <Setter Property="MinHeight" Value="32" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals" Value="{DynamicResource UseSystemFocusVisuals}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin" Value="-7,-3" />
+        <Setter Property="ui:ControlHelper.CornerRadius" Value="0" />
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type CheckBox}">
+              <ControlTemplate.Resources>
+                <StreamGeometry x:Key="CheckboxIndeterminate">M15,5L15,15 5,15 5,5z</StreamGeometry>
+                <StreamGeometry x:Key="CheckMark">M17.939453,5.439453L7.5,15.888672 2.060547,10.439453 2.939453,9.560547 7.5,14.111328 17.060547,4.560547z</StreamGeometry>
+              </ControlTemplate.Resources>
+              <Border x:Name="RootGrid" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}" SnapsToDevicePixels="True">
+                <Grid VerticalAlignment="Center">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <Grid VerticalAlignment="Top">
+                    <Rectangle x:Name="NormalRectangle" Fill="{DynamicResource CheckBoxCheckBackgroundFillUnchecked}" Height="20" Stroke="{DynamicResource CheckBoxCheckBackgroundStrokeUnchecked}" StrokeThickness="2" UseLayoutRounding="False" Width="20">
+                      <Rectangle.RadiusY>
+                        <TemplateBinding Property="ui:ControlHelper.CornerRadius">
+                          <TemplateBinding.Converter>
+                            <ui:CornerRadiusFilterConverter Filter="BottomRightValue" Scale="1" />
+                          </TemplateBinding.Converter>
+                        </TemplateBinding>
+                      </Rectangle.RadiusY>
+                      <Rectangle.RadiusX>
+                        <TemplateBinding Property="ui:ControlHelper.CornerRadius">
+                          <TemplateBinding.Converter>
+                            <ui:CornerRadiusFilterConverter Filter="TopLeftValue" Scale="1" />
+                          </TemplateBinding.Converter>
+                        </TemplateBinding>
+                      </Rectangle.RadiusX>
+                    </Rectangle>
+                    <ui:FontIconFallback x:Name="CheckGlyph" Data="M17.939453,5.439453L7.5,15.888672 2.060547,10.439453 2.939453,9.560547 7.5,14.111328 17.060547,4.560547z" Foreground="{DynamicResource CheckBoxCheckGlyphForegroundUnchecked}" FontSize="16" FontFamily="{DynamicResource SymbolThemeFontFamily}" Opacity="0" />
+                  </Grid>
+                  <ui:ContentPresenterEx x:Name="ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="1" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" TextWrapping="Wrap" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                </Grid>
+              </Border>
+              <ControlTemplate.Triggers>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="False" />
+                    <Condition Property="IsMouseOver" Value="False" />
+                    <Condition Property="IsPressed" Value="False" />
+                    <Condition Property="IsEnabled" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundUnchecked}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundUnchecked}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushUnchecked}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeUnchecked}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillUnchecked}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundUnchecked}" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="False" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundUncheckedPointerOver}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundUncheckedPointerOver}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushUncheckedPointerOver}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeUncheckedPointerOver}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillUncheckedPointerOver}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundUncheckedPointerOver}" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="False" />
+                    <Condition Property="IsPressed" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundUncheckedPressed}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundUncheckedPressed}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushUncheckedPressed}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeUncheckedPressed}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillUncheckedPressed}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundUncheckedPressed}" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="False" />
+                    <Condition Property="IsEnabled" Value="False" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundUncheckedDisabled}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundUncheckedDisabled}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushUncheckedDisabled}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeUncheckedDisabled}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillUncheckedDisabled}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundUncheckedDisabled}" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="True" />
+                    <Condition Property="IsMouseOver" Value="False" />
+                    <Condition Property="IsPressed" Value="False" />
+                    <Condition Property="IsEnabled" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundChecked}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundChecked}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushChecked}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeChecked}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillChecked}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundChecked}" />
+                  <Setter Property="StrokeThickness" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckedStrokeThickness}" />
+                  <Setter Property="Opacity" TargetName="CheckGlyph" Value="1" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="True" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundCheckedPointerOver}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundCheckedPointerOver}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushCheckedPointerOver}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeCheckedPointerOver}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillCheckedPointerOver}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundCheckedPointerOver}" />
+                  <Setter Property="Opacity" TargetName="CheckGlyph" Value="1" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="True" />
+                    <Condition Property="IsPressed" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundCheckedPressed}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundCheckedPressed}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushCheckedPressed}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeCheckedPressed}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillCheckedPressed}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundCheckedPressed}" />
+                  <Setter Property="Opacity" TargetName="CheckGlyph" Value="1" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="True" />
+                    <Condition Property="IsEnabled" Value="False" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundCheckedDisabled}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundCheckedDisabled}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushCheckedDisabled}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeCheckedDisabled}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillCheckedDisabled}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundCheckedDisabled}" />
+                  <Setter Property="Opacity" TargetName="CheckGlyph" Value="1" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="{x:Null}" />
+                    <Condition Property="IsMouseOver" Value="False" />
+                    <Condition Property="IsPressed" Value="False" />
+                    <Condition Property="IsEnabled" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundIndeterminate}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundIndeterminate}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushIndeterminate}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeIndeterminate}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillIndeterminate}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundIndeterminate}" />
+                  <Setter Property="Data" TargetName="CheckGlyph" Value="M15,5L15,15 5,15 5,5z" />
+                  <Setter Property="Opacity" TargetName="CheckGlyph" Value="1" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="{x:Null}" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundIndeterminatePointerOver}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundIndeterminatePointerOver}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushIndeterminatePointerOver}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeIndeterminatePointerOver}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillIndeterminatePointerOver}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundIndeterminatePointerOver}" />
+                  <Setter Property="Data" TargetName="CheckGlyph" Value="M15,5L15,15 5,15 5,5z" />
+                  <Setter Property="Opacity" TargetName="CheckGlyph" Value="1" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="{x:Null}" />
+                    <Condition Property="IsPressed" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundIndeterminatePressed}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundIndeterminatePressed}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushIndeterminatePressed}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeIndeterminatePressed}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillIndeterminatePressed}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundIndeterminatePressed}" />
+                  <Setter Property="Data" TargetName="CheckGlyph" Value="M15,5L15,15 5,15 5,5z" />
+                  <Setter Property="Opacity" TargetName="CheckGlyph" Value="1" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="{x:Null}" />
+                    <Condition Property="IsEnabled" Value="False" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="Foreground" TargetName="ContentPresenter" Value="{DynamicResource CheckBoxForegroundIndeterminateDisabled}" />
+                  <Setter Property="Background" TargetName="RootGrid" Value="{DynamicResource CheckBoxBackgroundIndeterminateDisabled}" />
+                  <Setter Property="BorderBrush" TargetName="RootGrid" Value="{DynamicResource CheckBoxBorderBrushIndeterminateDisabled}" />
+                  <Setter Property="Stroke" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundStrokeIndeterminateDisabled}" />
+                  <Setter Property="Fill" TargetName="NormalRectangle" Value="{DynamicResource CheckBoxCheckBackgroundFillIndeterminateDisabled}" />
+                  <Setter Property="Foreground" TargetName="CheckGlyph" Value="{DynamicResource CheckBoxCheckGlyphForegroundIndeterminateDisabled}" />
+                  <Setter Property="Data" TargetName="CheckGlyph" Value="M15,5L15,15 5,15 5,5z" />
+                  <Setter Property="Opacity" TargetName="CheckGlyph" Value="1" />
+                </MultiTrigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style TargetType="{x:Type ScrollViewer}" BasedOn="{x:Null}" />
+      <Style TargetType="{x:Type ScrollBar}" BasedOn="{x:Null}" />
+      <FontFamily x:Key="TitlebarIcons">pack://application:,,,/Resources/Fonts/#Segoe MDL2 Assets</FontFamily>
+      <Style x:Key="AppTitleBarStyle" TargetType="{x:Type ui:TitleBarControl}">
+        <Setter Property="ui:ThemeManager.RequestedTheme" Value="Light" />
+      </Style>
+      <Style x:Key="AppTitleBarButtonStyle" TargetType="{x:Type ui:TitleBarButton}">
+        <Setter Property="IsActive" Value="{Binding IsActive, ElementName=Window}" />
+      </Style>
+      <Style x:Key="AppTitleBarBackButtonStyle" TargetType="{x:Type ui:TitleBarButton}" BasedOn="{StaticResource AppTitleBarButtonStyle}" />
+      <Style x:Key="NormalButtonStyleUWP" TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThemeThickness}" />
+        <Setter Property="Padding" Value="8,5,8,6" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="{DynamicResource ContentControlThemeFontFamily}" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals" Value="{DynamicResource UseSystemFocusVisuals}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin" Value="-3" />
+        <Setter Property="ui:ControlHelper.CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Border x:Name="Background" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}" SnapsToDevicePixels="True">
+                <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}" Padding="{TemplateBinding Padding}">
+                  <ContentPresenter x:Name="ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                </Border>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                  <Setter Property="Background" TargetName="Background" Value="{DynamicResource ButtonBackgroundPointerOver}" />
+                  <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ButtonBorderBrushPointerOver}" />
+                  <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ButtonForegroundPointerOver}" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                  <Setter Property="Background" TargetName="Background" Value="{DynamicResource ButtonBackgroundPressed}" />
+                  <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ButtonBorderBrushPressed}" />
+                  <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ButtonForegroundPressed}" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter Property="Background" TargetName="Background" Value="{DynamicResource ButtonBackgroundDisabled}" />
+                  <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ButtonBorderBrushDisabled}" />
+                  <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ButtonForegroundDisabled}" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+          <Setter.Value>
+            <ControlTemplate>
+              <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2" />
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD" />
+      <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070" />
+      <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD" />
+      <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1" />
+      <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6" />
+      <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B" />
+      <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4" />
+      <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
+      <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
+      <Style x:Key="NonRoundedButton" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Background" Value="{StaticResource Button.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Border x:Name="border" BorderBrush="White" BorderThickness="2" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsDefaulted" Value="true">
+                  <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                  <Setter Property="Background" TargetName="border" Value="#35ffffff" />
+                  <Setter Property="BorderBrush" TargetName="border" Value="White" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                  <Setter Property="Background" TargetName="border" Value="White" />
+                  <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="Black" />
+                  <Setter Property="BorderBrush" TargetName="border" Value="White" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                  <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}" />
+                  <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}" />
+                  <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="UWPHomeButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Foreground" Value="{DynamicResource SystemBaseHighColorBrush}" />
+        <Setter Property="Background" Value="#80808080" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SystemBaseMediumHighColorBrush}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="FluentWPF:RevealElement.MouseOverForeground" Value="{DynamicResource SystemBaseHighColorBrush}" />
+        <Setter Property="FluentWPF:RevealElement.MouseOverBackground" Value="#01000000" />
+        <Setter Property="FluentWPF:RevealElement.MouseOverBorderOpacity" Value="0.1" />
+        <Setter Property="FluentWPF:RevealElement.PressBorderOpacity" Value="0.2" />
+        <Setter Property="FluentWPF:RevealElement.BorderRadius" Value="0" />
+        <Setter Property="FluentWPF:RevealElement.PressTintBrush" Value="{DynamicResource SystemBaseLowColorBrush}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Grid>
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                      <Storyboard>
+                        <DoubleAnimation Duration="0:0:0.6" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="backgroundBorder">
+                          <DoubleAnimation.EasingFunction>
+                            <CubicEase EasingMode="EaseOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:0.1" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pressLight">
+                          <DoubleAnimation.EasingFunction>
+                            <CubicEase EasingMode="EaseOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOver">
+                      <Storyboard>
+                        <DoubleAnimation Duration="0:0:0.6" To="0.5" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="backgroundBorder">
+                          <DoubleAnimation.EasingFunction>
+                            <CubicEase EasingMode="EaseOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pressLight">
+                          <DoubleAnimation.EasingFunction>
+                            <CubicEase EasingMode="EaseOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:0.2" To="200" Storyboard.TargetProperty="(RadialGradientBrush.RadiusX)" Storyboard.TargetName="brush">
+                          <DoubleAnimation.EasingFunction>
+                            <SineEase EasingMode="EaseInOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:0.2" To="200" Storyboard.TargetProperty="(RadialGradientBrush.RadiusY)" Storyboard.TargetName="brush">
+                          <DoubleAnimation.EasingFunction>
+                            <SineEase EasingMode="EaseInOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                      <Storyboard>
+                        <DoubleAnimation Duration="0:0:0.6" To="0.5" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="backgroundBorder">
+                          <DoubleAnimation.EasingFunction>
+                            <CubicEase EasingMode="EaseOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:0.1" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pressLight">
+                          <DoubleAnimation.EasingFunction>
+                            <CubicEase EasingMode="EaseOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation BeginTime="0:0:0.15" Duration="0:0:1.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pressLight">
+                          <DoubleAnimation.EasingFunction>
+                            <CubicEase EasingMode="EaseOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:0.1" From="100" To="50" Storyboard.TargetProperty="(RadialGradientBrush.RadiusX)" Storyboard.TargetName="brush">
+                          <DoubleAnimation.EasingFunction>
+                            <CubicEase EasingMode="EaseOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation BeginTime="0:0:0.15" Duration="0:0:1.5" To="200" Storyboard.TargetProperty="(RadialGradientBrush.RadiusX)" Storyboard.TargetName="brush">
+                          <DoubleAnimation.EasingFunction>
+                            <SineEase EasingMode="EaseInOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0:0:0.1" From="100" To="50" Storyboard.TargetProperty="(RadialGradientBrush.RadiusY)" Storyboard.TargetName="brush">
+                          <DoubleAnimation.EasingFunction>
+                            <CubicEase EasingMode="EaseOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation BeginTime="0:0:0.15" Duration="0:0:1.5" To="200" Storyboard.TargetProperty="(RadialGradientBrush.RadiusY)" Storyboard.TargetName="brush">
+                          <DoubleAnimation.EasingFunction>
+                            <SineEase EasingMode="EaseInOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Offset" Storyboard.TargetName="offset">
+                          <DoubleAnimation.EasingFunction>
+                            <SineEase EasingMode="EaseInOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation BeginTime="0:0:0.15" Duration="0:0:1.5" From="0" To="0.8" Storyboard.TargetProperty="Offset" Storyboard.TargetName="offset">
+                          <DoubleAnimation.EasingFunction>
+                            <SineEase EasingMode="EaseOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation BeginTime="0:0:0.2" Duration="0:0:2" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="brush">
+                          <DoubleAnimation.EasingFunction>
+                            <SineEase EasingMode="EaseInOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                      <Storyboard>
+                        <Animations:BrushAnimation AutoReverse="False" Duration="0:0:0.1" To="#FF838383" Storyboard.TargetProperty="(TextElement.Foreground)" Storyboard.TargetName="contentPresenter">
+                          <Animations:BrushAnimation.EasingFunction>
+                            <SineEase EasingMode="EaseInOut" />
+                          </Animations:BrushAnimation.EasingFunction>
+                        </Animations:BrushAnimation>
+                        <DoubleAnimation AutoReverse="False" Duration="0:0:0.1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="border">
+                          <DoubleAnimation.EasingFunction>
+                            <SineEase EasingMode="EaseInOut" />
+                          </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                      </Storyboard>
+                    </VisualState>
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border x:Name="background" Background="{TemplateBinding Background}" CornerRadius="{Binding (FluentWPF:RevealElement.BorderRadius), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" />
+                <Border x:Name="pressTintLayer" Background="{Binding (FluentWPF:RevealElement.PressTintBrush), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" CornerRadius="{Binding (FluentWPF:RevealElement.BorderRadius), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" Visibility="Hidden" />
+                <Border x:Name="backgroundBorder" CornerRadius="{Binding (FluentWPF:RevealElement.BorderRadius), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" Opacity="0">
+                  <Grid ClipToBounds="True">
+                    <Border x:Name="mouseoverLight" CornerRadius="{Binding (FluentWPF:RevealElement.BorderRadius), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}">
+                      <Border.Background>
+                        <RadialGradientBrush MappingMode="Absolute" RadiusY="300" RadiusX="300">
+                          <RadialGradientBrush.Center>
+                            <MultiBinding UpdateSourceTrigger="Default">
+                              <MultiBinding.Converter>
+                                <FluentWPF:RelativePositionConverter />
+                              </MultiBinding.Converter>
+                              <Binding Path="(FluentWPF:PointerTracker.RootObject)" />
+                              <Binding />
+                              <Binding Path="(FluentWPF:PointerTracker.Position)" />
+                            </MultiBinding>
+                          </RadialGradientBrush.Center>
+                          <RadialGradientBrush.GradientOrigin>
+                            <MultiBinding UpdateSourceTrigger="Default">
+                              <MultiBinding.Converter>
+                                <FluentWPF:RelativePositionConverter />
+                              </MultiBinding.Converter>
+                              <Binding Path="(FluentWPF:PointerTracker.RootObject)" />
+                              <Binding />
+                              <Binding Path="(FluentWPF:PointerTracker.Position)" />
+                            </MultiBinding>
+                          </RadialGradientBrush.GradientOrigin>
+                          <RadialGradientBrush.Opacity>
+                            <Binding Path="(FluentWPF:PointerTracker.IsEnter)">
+                              <Binding.ConverterParameter>
+                                <System:Double>0.2</System:Double>
+                              </Binding.ConverterParameter>
+                              <Binding.Converter>
+                                <FluentWPF:OpacityConverter />
+                              </Binding.Converter>
+                            </Binding>
+                          </RadialGradientBrush.Opacity>
+                          <GradientStop Color="White" Offset="0" />
+                          <GradientStop Color="Transparent" Offset="1" />
+                        </RadialGradientBrush>
+                      </Border.Background>
+                    </Border>
+                    <Rectangle x:Name="pressLight">
+                      <Rectangle.Clip>
+                        <RectangleGeometry RadiusY="{Binding (FluentWPF:RevealElement.BorderRadius), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" RadiusX="{Binding (FluentWPF:RevealElement.BorderRadius), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}">
+                          <RectangleGeometry.Rect>
+                            <MultiBinding UpdateSourceTrigger="Default">
+                              <MultiBinding.Converter>
+                                <Converters:RectConverter />
+                              </MultiBinding.Converter>
+                              <Binding Path="ActualWidth" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Rectangle}}" />
+                              <Binding Path="ActualHeight" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Rectangle}}" />
+                            </MultiBinding>
+                          </RectangleGeometry.Rect>
+                        </RectangleGeometry>
+                      </Rectangle.Clip>
+                      <Rectangle.Fill>
+                        <RadialGradientBrush MappingMode="Absolute" RadiusY="200" RadiusX="200">
+                          <RadialGradientBrush.Center>
+                            <MultiBinding UpdateSourceTrigger="Default">
+                              <MultiBinding.Converter>
+                                <FluentWPF:RelativePositionConverter />
+                              </MultiBinding.Converter>
+                              <Binding Path="(FluentWPF:PointerTracker.RootObject)" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Rectangle}}" />
+                              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Rectangle}}" />
+                              <Binding Path="(FluentWPF:PointerTracker.Position)" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Rectangle}}" />
+                            </MultiBinding>
+                          </RadialGradientBrush.Center>
+                          <RadialGradientBrush.GradientOrigin>
+                            <MultiBinding UpdateSourceTrigger="Default">
+                              <MultiBinding.Converter>
+                                <FluentWPF:RelativePositionConverter />
+                              </MultiBinding.Converter>
+                              <Binding Path="(FluentWPF:PointerTracker.RootObject)" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Rectangle}}" />
+                              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Rectangle}}" />
+                              <Binding Path="(FluentWPF:PointerTracker.Position)" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Rectangle}}" />
+                            </MultiBinding>
+                          </RadialGradientBrush.GradientOrigin>
+                          <GradientStop Color="Transparent" Offset="0" />
+                          <GradientStop Color="#88FFFFFF" Offset="0.5" />
+                          <GradientStop Color="Transparent" Offset="1" />
+                        </RadialGradientBrush>
+                      </Rectangle.Fill>
+                    </Rectangle>
+                  </Grid>
+                </Border>
+                <Border BorderBrush="{x:Null}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{Binding (FluentWPF:RevealElement.BorderRadius), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}">
+                  <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                </Border>
+                <Grid x:Name="border">
+                  <Border x:Name="borderMouseOver" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{Binding (FluentWPF:RevealElement.BorderRadius), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" Opacity="{Binding (FluentWPF:RevealElement.BorderOpacity), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" />
+                  <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{Binding (FluentWPF:RevealElement.BorderRadius), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}">
+                    <Border.OpacityMask>
+                      <RadialGradientBrush MappingMode="Absolute" RadiusY="70" RadiusX="70">
+                        <RadialGradientBrush.Center>
+                          <MultiBinding UpdateSourceTrigger="Default">
+                            <MultiBinding.Converter>
+                              <FluentWPF:RelativePositionConverter />
+                            </MultiBinding.Converter>
+                            <Binding Path="(FluentWPF:PointerTracker.RootObject)" />
+                            <Binding />
+                            <Binding Path="(FluentWPF:PointerTracker.Position)" />
+                          </MultiBinding>
+                        </RadialGradientBrush.Center>
+                        <RadialGradientBrush.GradientOrigin>
+                          <MultiBinding UpdateSourceTrigger="Default">
+                            <MultiBinding.Converter>
+                              <FluentWPF:RelativePositionConverter />
+                            </MultiBinding.Converter>
+                            <Binding Path="(FluentWPF:PointerTracker.RootObject)" />
+                            <Binding />
+                            <Binding Path="(FluentWPF:PointerTracker.Position)" />
+                          </MultiBinding>
+                        </RadialGradientBrush.GradientOrigin>
+                        <RadialGradientBrush.Opacity>
+                          <Binding Path="(FluentWPF:PointerTracker.IsEnter)">
+                            <Binding.ConverterParameter>
+                              <System:Double>0.3</System:Double>
+                            </Binding.ConverterParameter>
+                            <Binding.Converter>
+                              <FluentWPF:OpacityConverter />
+                            </Binding.Converter>
+                          </Binding>
+                        </RadialGradientBrush.Opacity>
+                        <GradientStop Color="White" Offset="0" />
+                        <GradientStop Color="Transparent" Offset="1" />
+                      </RadialGradientBrush>
+                    </Border.OpacityMask>
+                  </Border>
+                </Grid>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                  <Setter Property="Background" TargetName="background" Value="{Binding (FluentWPF:RevealElement.MouseOverBackground), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" />
+                  <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{Binding (FluentWPF:RevealElement.MouseOverForeground), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" />
+                  <Setter Property="Opacity" TargetName="borderMouseOver" Value="{Binding (FluentWPF:RevealElement.MouseOverBorderOpacity), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                  <Setter Property="Visibility" TargetName="pressTintLayer" Value="Visible" />
+                  <Setter Property="Opacity" TargetName="borderMouseOver" Value="{Binding (FluentWPF:RevealElement.PressBorderOpacity), RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Button}}}" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

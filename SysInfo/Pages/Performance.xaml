@@ -1,0 +1,207 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:SysInfo"
+      xmlns:ui="http://schemas.modernwpf.com/2019" x:Class="SysInfo.Performance"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      KeepAlive="True"
+      Title="Performance" Loaded="LoadedPerformance">
+
+    <Page.Resources>
+        <Style x:Key="NormalButton" TargetType="{x:Type ToggleButton}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" Value="{DynamicResource ToggleButtonBackground}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ToggleButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ToggleButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="{DynamicResource ToggleButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="{DynamicResource ButtonPadding}"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{DynamicResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}"/>
+            <Setter Property="ui:ControlHelper.CornerRadius" Value="{DynamicResource ControlCornerRadius}"/>
+            <Setter Property="FocusVisualStyle" Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}"/>
+            <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals" Value="{DynamicResource UseSystemFocusVisuals}"/>
+            <Setter Property="ui:FocusVisualHelper.FocusVisualMargin" Value="-3"/>
+            <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="Background" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}" SnapsToDevicePixels="True">
+                            <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}" Padding="{TemplateBinding Padding}">
+                                <ContentPresenter x:Name="ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="False"/>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackgroundPointerOver}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrushPointerOver}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForegroundPointerOver}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="False"/>
+                                    <Condition Property="IsPressed" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackgroundPressed}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrushPressed}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForegroundPressed}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="False"/>
+                                    <Condition Property="IsEnabled" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackgroundDisabled}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForegroundDisabled}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrushDisabled}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="True"/>
+                                    <Condition Property="IsMouseOver" Value="False"/>
+                                    <Condition Property="IsPressed" Value="False"/>
+                                    <Condition Property="IsEnabled" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackground}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForeground}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrush}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="True"/>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackgroundCheckedPointerOver}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrushCheckedPointerOver}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForegroundCheckedPointerOver}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="True"/>
+                                    <Condition Property="IsPressed" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackgroundCheckedPressed}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForegroundCheckedPressed}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrushCheckedPressed}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="True"/>
+                                    <Condition Property="IsEnabled" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackgroundCheckedDisabled}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForegroundCheckedDisabled}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrushCheckedDisabled}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="{x:Null}"/>
+                                    <Condition Property="IsMouseOver" Value="False"/>
+                                    <Condition Property="IsPressed" Value="False"/>
+                                    <Condition Property="IsEnabled" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackgroundIndeterminate}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForegroundIndeterminate}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrushIndeterminate}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="{x:Null}"/>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackgroundIndeterminatePointerOver}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrushIndeterminatePointerOver}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForegroundIndeterminatePointerOver}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="{x:Null}"/>
+                                    <Condition Property="IsPressed" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackgroundIndeterminatePressed}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrushIndeterminatePressed}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForegroundIndeterminatePressed}"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="{x:Null}"/>
+                                    <Condition Property="IsEnabled" Value="False"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Background" Value="{DynamicResource ToggleButtonBackgroundIndeterminateDisabled}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="ContentPresenter" Value="{DynamicResource ToggleButtonForegroundIndeterminateDisabled}"/>
+                                <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ToggleButtonBorderBrushIndeterminateDisabled}"/>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,30,0,0">
+                <ToggleButton x:Name="ButtonExpand" Background="{x:Null}" BorderThickness="0" Margin="0" Content="&#xF0AE;"
+                        FontFamily="{StaticResource TitlebarIcons}" FontSize="9" HorizontalAlignment="Left"
+                        VerticalAlignment="Top" Width="16" Height="16"
+                        Padding="0" Style="{DynamicResource NormalButton}" />
+                <fw:AcrylicPopup IsOpen="{Binding IsChecked, ElementName=ButtonExpand}" Placement="Bottom"
+		                      PlacementTarget="{Binding ElementName=ButtonExpand}" PopupAnimation="Fade" x:Name="Popup" HorizontalAlignment="Center"
+                       VerticalAlignment="Center" Height="150" Width="427" StaysOpen="False">
+                    <Grid Background="#01FFFFFF"  Height="132" Width="421.65" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center">
+                        <Slider x:Name="Slider" Foreground="Gray" Width="330.825" HorizontalAlignment="Center"
+                                    VerticalAlignment="Top" DockPanel.Dock="Top" TickPlacement="BottomRight"
+                                    SmallChange="0" Value="5" ValueChanged="ChangeSliderValue" Cursor="SizeWE"
+                                    IsMoveToPointEnabled="True" Margin="0,7,0,0" Height="41.032" />
+
+                        <TextBlock Text="Adjust update interval for CPU and RAM usage"
+                                           VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,14" />
+
+                        <TextBlock Text="&lt;&lt; Faster" VerticalAlignment="Bottom"
+                                       HorizontalAlignment="Left"
+                                       Margin="52,0,0,70" />
+                        <TextBlock Text="Slower &gt;&gt;" VerticalAlignment="Bottom"
+                                       HorizontalAlignment="Right"
+                                       Margin="0,0,52,70" />
+                    </Grid>
+                </fw:AcrylicPopup>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Border BorderBrush="{x:Null}" Height="50" HorizontalAlignment="Left" Margin="10"
+                        VerticalAlignment="Top">
+                    <TextBlock FontWeight="Light"
+                               TextWrapping="NoWrap" Text="Performance" FontSize="26"
+                               VerticalAlignment="Center" />
+                </Border>
+                <TextBlock x:Name="Cpu" Text="cpu" FontSize="13" Padding="10"/>
+                <TextBlock x:Name="Gpu" Text="gpu" FontSize="13" Padding="10" Margin="0,-15,0,0" />
+                
+                <TextBlock x:Name="CPUSpeed" Text="cpuspeed" FontSize="13" Padding="10"
+                           Margin="0,-15,0,0" />
+                <TextBlock x:Name="DimmSlots" Text="ramslots" FontSize="13" Padding="10"
+                           Margin="0,-15,0,0" />
+                <TextBlock x:Name="Ramfreq" Text="ramfreq" FontSize="13" Padding="10"
+                           Margin="0,-15,0,0" />
+                <TextBlock x:Name="DiskSpace" Text="diskspace" FontSize="13" Padding="10" LineHeight="22"  Margin="0,-15,0,0"
+                           x:FieldModifier="public" />
+                <TextBlock x:Name="CpuUsage" Text="perfcpu" FontSize="13" Padding="10"
+                           Margin="0,-20,0,0" />
+                <TextBlock x:Name="RamUsage" Text="perfram" FontSize="13" Padding="10"
+                           Margin="0,-15,0,0" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

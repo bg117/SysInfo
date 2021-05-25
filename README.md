@@ -1,23 +1,28 @@
 # SysInfo
+
 Displays information about your system.
 
-Compile using Microsoft Visual Studio 2019. Older versions not guaranteed to work. Needs .NET Framework 4.5 to work.
+Compile using Microsoft Visual Studio 2019. Older versions not guaranteed to work. Needs .NET Framework 4.5.2 to work.
 
-**NEW UPDATE COMING VERY SOON!**
+Changelog can be found [here](../master/CHANGELOG.md)
 
 ## Compile without contributing
+
 Download the source files. (DON'T DOWNLOAD THE SOURCE FILES FROM THE RELEASES SECTION!) To compile, choose `Release | AnyCPU`, go to the Build tab, press Build Solution, and you're done. Go to SysInfo\bin\Release to see the actual program.
 
 ## Contribute to project
+
 Download and install git [here](https://git-scm.com/downloads).
 
 ### Fork the repo
+
 Click the `Fork` button in the top-right corner of the screen. This will create a repo in your account.
 
 ### Clone the repo
+
 Click the `Clone` button in the top-right corner of the screen.
 
-Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the `Code` button and then click the ![alt text](https://i.ibb.co/NTwxwVp/githubcopy.png "Copy to Clipboard") icon.
+Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the `Code` button and then click the ![Copy to Clipboard](https://i.ibb.co/wBGkyhk/icon.png "Copy to Clipboard") icon.
 
 Open up git Bash and type in the following:
 
@@ -27,7 +32,7 @@ For example:
 
 `git clone https://github.com/username/SysInfo.git "destination path"`
 
-where `username` is your GitHub username and "destination path" is the path where you want the cloned repo to be placed on your computer. Here you're copying the contents of the first-contributions repository on GitHub to your computer.
+where `username` is your GitHub username and "destination path" is the path where you want the cloned repo to be placed on your computer. Here you're copying the contents of the SysInfo repository on GitHub to your computer.
 
 ### Create a branch
 
@@ -41,11 +46,11 @@ Don't close git yet!
 
 ### Make changes and commit them
 
-Now, you can fix the code from here (if there's something wrong). **MAKE SURE TO EMPTY THE bin AND obj FOLDERS!**
+Now, you can fix the code from here (if there's something wrong).
 
 Don't forget to put your name in the CONTRIBUTORS.md file!
 
-After you're done fixing the code and testing it (and emptying the bin and obj folders), type this into git Bash:
+After you're done fixing the code and testing it, type this into git Bash:
 
 `git add -A`
 
@@ -75,21 +80,17 @@ Soon, if the changes passed, I'll be merging all your changes into the master br
 
 #### Language: C#
 
-## Description
+# Description
 
 This is a simple application that displays information (Windows version, build, CPU, etc.) about your system.
-Works on XP, Vista, 7, 8, 8.1, and Windows 10.
-
-‎
+Works on Windows 7, 8, 8.1, and 10.
 
 # Changelog
 
 Changelog can be found [here](../master/CHANGELOG.md)
 
-OpenCode 2021
+© OpenCode 2021
 
-Made by Kian Gabriel Arambulo
-
-<sup>Last updated: May 2, 2021</sup>
+<sup>Last updated: May 25, 2021</sup>
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=kiangabrielarambulo%40gmail.com&currency_code=PHP)
