@@ -83,7 +83,7 @@ namespace SysInfo
                     {
                         if (AttachConsole(-1))
                         {
-                            Console.WriteLine("SysInfo Help\r\n\n\n--info | /info : displays system information in command line instead of opening SysInfo");
+                            Console.WriteLine("SysInfo Help\r\n\r\n--info | /info : displays system information in command line instead of opening SysInfo\r\n--write | /write <file> : Writes system information to specified file. Default extension is '.snfo'.");
                             Forms.SendKeys.SendWait("{ENTER}");
                             Application.Current.Shutdown();
                         }
