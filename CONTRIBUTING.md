@@ -17,7 +17,7 @@ For example:
 
 `git clone https://github.com/username/SysInfo.git "destination path"`
 
-where `username` is your GitHub username and "destination path" is the path where you want the cloned repo to be placed on your computer. Here you're copying the contents of the first-contributions repository on GitHub to your computer.
+where `username` is your GitHub username and "destination path" is the path where you want the cloned repo to be placed on your computer. Here you're copying the contents of the SysInfo repository on GitHub to your computer.
 
 ### Create a branch
 
@@ -61,4 +61,4 @@ If you go to your repository on GitHub, you'll see a `Compare & pull request` bu
 
 Submit the pull request.
 
-Soon, if the changes passed, I'll be merging all your changes into the master branch of this project. You will get a notification email once thechanges have been merged.
+Soon, if the changes passed, I'll be merging all your changes into the master branch of this project. You will get a notification email once the changes have been merged.
