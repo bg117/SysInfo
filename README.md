@@ -87,7 +87,7 @@ Works on Windows 7, 8, 8.1, and 10.
 
 # Changelog
 
-Changelog can be found [here](../master/CHANGELOG.md)
+Changelog can be found [here](../master/Changelog.md)
 
 © OpenCode 2021
 
